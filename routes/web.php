@@ -47,3 +47,18 @@ Route::post('resto/user/update/{id}',
 Route::post('resto/user/destroy/{id}',
 [App\Http\Controllers\resto\UserController::class, 'destroy'])
 ->middleware('can:isResto');
+Route::get('resto/pizza', [App\Http\Controllers\resto\PizzaController::class,
+'index'])->middleware('can:isResto');
+Route::get('resto/pizza/create', [App\Http\Controllers\resto\PizzaController::class,
+'create'])->middleware('can:isResto');
+Route::post('resto/pizza/store', [App\Http\Controllers\resto\PizzaController::class,
+'store'])->middleware('can:isResto');
+Route::get('resto/pizza/edit/{id}',
+[App\Http\Controllers\resto\PizzaController::class,
+'edit'])->middleware('can:isResto');
+Route::post('resto/pizza/update/{id}',
+[App\Http\Controllers\resto\PizzaController::class,
+'update'])->middleware('can:isResto');
+Route::post('resto/pizza/destroy/{id}',
+[App\Http\Controllers\resto\PizzaController::class,
+'destroy'])->middleware('can:isResto');
